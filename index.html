@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=360, height=600, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TriForce</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('your_custom_font.ttf'); /* Замените на URL вашего шрифта */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('2.png'); /* Замените на URL вашего фото */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            width: 100%; /* Полная ширина контейнера */
+        }
+        .title {
+            font-family: 'CustomFont', Arial, sans-serif;
+            font-size: 1.8em; /* Уменьшен размер шрифта */
+            color: #8B4513;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            width: 90%; /* Уменьшена ширина строки поиска */
+            display: flex;
+            
+            margin-left: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%; /* Полная ширина поля ввода */
+            padding: 10px;
+            padding-left: 40px; /* Отступ для лупы */
+            border: 1px solid #ccc;
+            border-radius: 40px;
+            outline: none;
+        }
+        .search-bar img {
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .search-bar button {
+            padding: 10px 15px; /* Уменьшен размер кнопки */
+            border: 2px solid #1539A3; /* Добавлена обводка */
+            background-color: #1539A3;
+            color: white;
+            border-radius: 40px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-bar button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .rounded-button {
+            border-radius: 40px;
+            padding: 10px 15px; /* Уменьшен размер кнопок */
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+        .rounded-button-blue {
+            background-color: #1539A3;
+            color: white;
+            border: 2px solid #1539A3; /* Добавлена обводка */
+        }
+        .rounded-button-blue:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .rounded-button-green {
+            background-color: #50DA38;
+            color: white;
+            border: 2px solid white; /* Белая обводка */
+        }
+        .rounded-button-green:hover {
+            background-color: #218838;
+        }
+        .top-buttons {
+            position: absolute;
+            top: 10px;
+            
+            right: 10px;
+            display: flex;
+            gap: 5px; /* Уменьшено расстояние между кнопками */
+        }
+        .top-buttons button {
+            padding: 5px 10px;
+            font-size: 0.8em; /* Уменьшен размер шрифта кнопок */
+            cursor: pointer;
+            border: none;
+            border-radius: 40px;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s;
+        }
+        .top-buttons button:hover {
+            background-color: #ccc;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2em; /* Уменьшен размер шрифта */
+            color: #8B4513;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">TF</div>
+    <div class="top-buttons">
+        <button onclick="register()">зарегистрироваться</button>
+        <button onclick="login()">войти</button>
+    </div>
+    <div class="container">
+        <div class="title">TriForce</div>
+        <div class="search-bar">
+            <img src="1.png" alt="Лупа"> <!-- Замените на URL вашего изображения лупы -->
+            <input type="text" id="searchInput" placeholder="найди работу своей мечты">
+            <button onclick="search()">найти</button>
+        </div>
+        <button class="rounded-button rounded-button-green" onclick="createResume()">создать резюме</button>
+    </div>
+
+    <script>
+        function search() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                window.location.href = `https://www.example.com/search?q=${encodeURIComponent(query)}`;
+            }
+        }
+
+        function createResume() {
+            window.location.href = 'https://www.example.com/create-resume';
+        }
+
+        function register() {
+            window.location.href = 'https://www.example.com/register';
+        }
+
+        function login() {
+            window.location.href = 'https://www.example.com/login';
+        }
+    </script>
+</body>
+</html>
